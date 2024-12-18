@@ -1,0 +1,195 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+@font-face {
+    font-family: Arcade;
+    src: url(fonts/PressStart2P-vaV7.woff);
+}
+
+@font-face {
+    font-family: SF;
+    src: url(fonts/SF-Pro.woff);
+}
+
+body {
+    display: flex;
+    background-color: black;
+    color: white;
+    font-family: Arcade;
+}
+.image-container {
+    position: relative;
+    width: 50%;
+    min-height: 100vh;
+}
+.image {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/ben-neale-zpxKdH_xNSI-unsplash.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    font-family: Arcade;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: white;
+    justify-content: center;
+    font-size: calc(14px + (26 - 14) * ((100vw - 900px) / (1600 - 300)));
+    width: 100%;
+    margin-right: 13px;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+}
+
+.logo svg {
+    flex: 0 0 150px;
+}
+
+.logo h1 {
+    top: 10px;
+}
+
+.credits {
+    justify-content: center;
+    gap: 10px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    padding: 10px;
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+header {
+    padding: 10px 0px 0px 50px;
+}
+
+.field {
+    padding: 50px 50px;
+    border: none;
+    box-shadow: 0.3em 0.3em 1em rgba(30, 71, 255, 0.6);
+    margin-bottom: 30px;
+}
+
+.field h3 {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.signup-container {
+    padding: 30px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 25vw;
+    outline: none;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border: 2px blue solid;
+}
+
+input[type="text"]:valid,
+input[type="email"]:valid {
+    border: 2px rgb(44, 240, 44) solid;
+}
+
+input[type="text"]:not(:placeholder-shown):invalid,
+input[type="email"]:not(:placeholder-shown):invalid {
+    border: 2px red solid;
+}
+
+button {
+    font-size: 15px;
+    margin-top: 30px;
+    background-color: blue;
+    border: none;
+    padding: 5px 5px;
+}
+
+@media screen and (max-width: 1000px) {
+    .logo svg {
+        flex: 0 0 80px;
+        margin-right: 13px;
+    }
+    .logo h1 {
+        font-size: 20px;
+    }
+}
